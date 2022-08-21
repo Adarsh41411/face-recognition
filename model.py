@@ -1,6 +1,6 @@
 import sys
 import tensorflow as tf
-from keras import models,layers
+from tensorflow.keras import models,layers
 import matplotlib.pyplot as plt
 
 # path of datsets
@@ -50,7 +50,7 @@ resize_and_rescale = tf.keras.Sequential([
 
 
 ### Data Augumentation
-
+"""
 data_augumentation = tf.keras.Sequential([
     layers.experimental.preprocessing.RandomFlip("horizontal_and_vertical"),
     layers.experimental.preprocessing.RandomRotation(0.2),
@@ -62,7 +62,7 @@ data_augumentation = tf.keras.Sequential([
 train_ds = train_ds.map(
                 lambda x, y: (data_augumentation(x, training=True), y)
 ).prefetch(buffer_size=tf.data.AUTOTUNE)
-
+"""
 
 
 ### Building the Model
