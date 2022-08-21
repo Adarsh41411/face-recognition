@@ -27,7 +27,10 @@ dataset = tf.keras.preprocessing.image_dataset_from_directory(
 )
 
 class_names = dataset.class_names
-
+with open('label.csv','w') as f:
+    write = csv.writer(f)
+    write.writerow(class_names)
+    
 ## spliting the datasets into train,val,test
 
 train_size = 0.8
